@@ -1,0 +1,9 @@
+# One entry per Jotty user who wants notifications.
+# api_key: Jotty > Profile > Settings > API Key (starts with ck_)
+# chat_id: the user's Telegram chat id; the user must start the bot first.
+- username: alice
+  api_key: ck_replace_me
+  chat_id: 123456789
+- username: bob
+  api_key: ck_replace_me
+  chat_id: 987654321

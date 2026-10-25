@@ -1,0 +1,9 @@
+source
+tests
+state
+.git
+.venv
+.env
+users.yaml
+**/__pycache__
+.pytest_cache

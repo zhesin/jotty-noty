@@ -1,0 +1,25 @@
+[project]
+name = "jotty-noty"
+version = "0.1.0"
+description = "Telegram notifications for Jotty Kanban boards"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "zhesin" }]
+requires-python = ">=3.12"
+dependencies = [
+    "httpx==0.28.1",
+    "pydantic==2.13.5",
+    "pydantic-settings==2.15.0",
+    "PyYAML==6.0.3",
+]
+
+[project.urls]
+Homepage = "https://github.com/zhesin/jotty-noty"
+
+[project.optional-dependencies]
+dev = ["pytest==9.1.1"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

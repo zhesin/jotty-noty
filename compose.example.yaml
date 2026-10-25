@@ -1,0 +1,22 @@
+# Copy to compose.yaml and adjust the paths. Jotty runs as its own compose project (here in /opt/jotty);
+# both projects join a shared network created once with:
+#   docker network create jotty-net
+# and Jotty's service needs `networks: [default, jotty-net]` plus the same top-level `networks` entry.
+services:
+  jotty-noty:
+    build: .
+    container_name: jotty-noty
+    env_file: .env
+    volumes:
+      # Only the checklists part of Jotty's data, read-only: comments are not available through the
+      # REST API. Do not mount all of data/, it also holds every user's API key and sessions.
+      - /opt/jotty/data/checklists:/jotty-data/checklists:ro
+      - ./users.yaml:/app/users.yaml:ro
+      - ./state:/app/state
+    networks:
+      - jotty-net
+    restart: unless-stopped
+
+networks:
+  jotty-net:
+    external: true

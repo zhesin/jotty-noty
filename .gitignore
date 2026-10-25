@@ -1,0 +1,10 @@
+/source/
+.env
+users.yaml
+/state/
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+compose.yaml
+.public-export
